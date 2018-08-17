@@ -1,0 +1,29 @@
+{
+  "name": "butikk-liste",
+  "version": "1.0.0",
+  "description": "Shopping List Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Travisg25/butikk-liste.git"
+  },
+  "author": "Travis Grossman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Travisg25/butikk-liste/issues"
+  },
+  "homepage": "https://github.com/Travisg25/butikk-liste#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
