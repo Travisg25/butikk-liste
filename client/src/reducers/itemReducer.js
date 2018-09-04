@@ -1,13 +1,14 @@
 import uuid from "uuid";
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from "../actions/types";
+import {
+  GET_ITEMS,
+  ADD_ITEM,
+  DELETE_ITEM,
+  ITEMS_LOADING
+} from "../actions/types";
 
 const initailState = {
-  items: [
-    { id: uuid(), name: "Eggs" },
-    { id: uuid(), name: "Bacon" },
-    { id: uuid(), name: "Garlic" },
-    { id: uuid(), name: "Chicken" }
-  ]
+  items: [],
+  loading: false
 };
 
 export default function(state = initailState, action) {
@@ -15,6 +16,22 @@ export default function(state = initailState, action) {
     case GET_ITEMS:
       return {
         ...state
+      };
+    case DELETE_ITEM:
+      return {
+        ...state,
+        items: [action.payload, ...state.items]
+      };
+
+    case ADD_ITEM:
+      return {
+        ...state,
+        items: [action.payload, ...state.items]
+      };
+    case ITEMS_LOADING:
+      return {
+        ...state,
+        loading: true
       };
     default:
       return state;
