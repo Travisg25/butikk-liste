@@ -10,8 +10,8 @@ class ShoppingList extends Component {
     this.props.getItems();
   }
 
-  onDeleteClick = _id => {
-    this.props.deleteItem(_id);
+  onDeleteClick = id => {
+    this.props.deleteItem(id);
   };
 
   render() {

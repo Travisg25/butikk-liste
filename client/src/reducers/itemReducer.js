@@ -5,12 +5,12 @@ import {
   ITEMS_LOADING
 } from "../actions/types";
 
-const initailState = {
+const initialState = {
   items: [],
   loading: false
 };
 
-export default function(state = initailState, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case GET_ITEMS:
       return {
@@ -23,7 +23,6 @@ export default function(state = initailState, action) {
         ...state,
         items: state.items.filter(item => item._id !== action.payload)
       };
-
     case ADD_ITEM:
       return {
         ...state,
