@@ -1,4 +1,3 @@
-import uuid from "uuid";
 import {
   GET_ITEMS,
   ADD_ITEM,
@@ -15,12 +14,14 @@ export default function(state = initailState, action) {
   switch (action.type) {
     case GET_ITEMS:
       return {
-        ...state
+        ...state,
+        items: action.payload,
+        loading: false
       };
     case DELETE_ITEM:
       return {
         ...state,
-        items: [action.payload, ...state.items]
+        items: state.items.filter(item => item._id !== action.payload)
       };
 
     case ADD_ITEM:
